@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Воздух ТВ — Прямой эфир</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <span class="logo-icon">📺</span>
+    <span class="logo-text">ВОЗДУХ ТВ</span>
+  </div>
+  <a class="twitch-btn" href="https://twitch.tv/vosdushtv" target="_blank">
+    Смотреть на Twitch →
+  </a>
+</header>
+
+<main class="layout">
+  <!-- ПЛЕЕР -->
+  <section class="player-section">
+    <div class="player">
+      <iframe
+        src="https://player.twitch.tv/?channel=vosdushtv&parent=localhost"
+        frameborder="0"
+        allowfullscreen="true"
+        scrolling="no"
+        height="100%"
+        width="100%">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ЧАТ -->
+  <aside class="chat-panel">
+    <div class="chat-header">
+      <span>💬 Чат стрима</span>
+      <span class="online-count" id="onlineCount">● онлайн</span>
+    </div>
+
+    <div class="chat-messages" id="chatMessages"></div>
+
+    <div class="chat-input-area">
+      <input type="text" id="chatName" placeholder="Ваш ник" maxlength="20">
+      <div class="input-row">
+        <input type="text" id="chatInput" placeholder="Написать в чат..." maxlength="200">
+        <button id="chatSend">➤</button>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Воздух ТВ. Прямые эфиры каждый день.</p>
+</footer>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>
